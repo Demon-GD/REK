@@ -1,0 +1,36 @@
+Android4.4.4 art arm
+
+================original================
+drwxr-xr-x root     root              1971-01-13 00:10 system
+drwxr-xr-x root     shell             1971-01-13 00:27 bin
+-rwxr-xr-x root     shell       62736 2008-08-01 12:00 dex2oat
+
+================su================
+
+mount -o rw,remount -t yaffs2 /dev/block/mtdblock3 /system
+chmod 775 system
+chmod 775 system/bin
+
+cp -a /system/bin/dex2oat /sdcard/dex2oat.bak
+
+cp -a /sdcard/dex2oat /system/bin/dex2oat
+chown root:shell /system/bin/dex2oat
+chmod 775 /system/bin/dex2oat
+
+================change================
+drwxrwxr-x root     root              1971-01-13 00:10 system
+drwxrwxr-x root     shell             1971-01-13 00:27 bin
+-rwxrwxr-x root     shell       62800 1971-01-13 00:43 dex2oat
+
+
+================dump================
+adb logcat | grep dex2oat
+I/dex2oat ( 2202): dex2oat: /data/data/com.binfenenglish.binfen/.jiagu/classes.oat
+I/dex2oat ( 2202): Flying:dex file name-->/data/data/com.binfenenglish.binfen/.jiagu/classes.dex
+I/dex2oat ( 2202): Flying:write target dex file successfully-->/data/data/com.binfenenglish.binfen/.jiagu/classes.dex_5906548.dex
+I/dex2oat ( 2202): Flying:dex file name-->/data/data/com.binfenenglish.binfen/.jiagu/classes2.dex
+I/dex2oat ( 2202): Flying:write target dex file successfully-->/data/data/com.binfenenglish.binfen/.jiagu/classes2.dex_153532.dex
+I/dex2oat ( 2202): YYsecurity:dex2oat start compiler CreateOatFile
+W/dex2oat ( 2202): Compilation of com.google.zxing.qrcode.decoder.Version[] com.google.zxing.qrcode.decoder.Version.buildVersions() took 213.083237ms
+
+

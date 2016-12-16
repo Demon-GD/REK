@@ -1,0 +1,42 @@
+================baksmali/smali================
+https://github.com/JesusFreke/smali
+https://bitbucket.org/JesusFreke/smali/downloads
+================
+usage: java -jar baksmali.jar [options] <dex-file>
+disassembles and/or dumps a dex file
+----------------
+java -jar baksmali -o classout/ test.dex
+================
+usage: java -jar smali.jar [options] [--] [<smali-file>|folder]*
+assembles a set of smali files into a dex file
+
+
+
+================Apktool================
+a tool for reengineering Android apk files
+with smali and baksmali
+----------------
+https://ibotpeaches.github.io/Apktool
+https://github.com/iBotPeaches/Apktool
+https://bitbucket.org/iBotPeaches/apktool/downloads
+================
+Move both files (apktool.jar [link] & apktool [script]) 
+to /usr/local/bin (root needed)
+================
+apktool d test.apk //Decoding
+apktool b test //Building
+
+
+================dex2jar================
+https://github.com/pxb1988/dex2jar
+================
+dex2jar.bat classes.dex //2jar
+
+
+================JD-GUI================
+Java Decompiler
+----------------
+http://jd.benow.ca/
+https://github.com/java-decompiler/jd-gui
+================
+java -jar jd-gui-1.4.0.jar 
